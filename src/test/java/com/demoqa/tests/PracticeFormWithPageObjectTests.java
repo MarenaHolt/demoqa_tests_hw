@@ -13,7 +13,7 @@ public class PracticeFormWithPageObjectTests extends TestBase {
     String gender = "Male";
     String phone = "1234567890";
     String hobby = "Reading";
-    String image = "img/image.img";
+    String image = "image.img";
     String address = "221b, Baker Street, London, NW1 6XE, UK";
     String state = "Haryana";
     String city = "Panipat";
@@ -35,7 +35,7 @@ public class PracticeFormWithPageObjectTests extends TestBase {
                 .setBirthDay(day, month, year)
                 .setSubjects("M", subject)
                 .setHobbies(hobby)
-                .setUploadPicture(image)
+                .setUploadPicture("img/"+ image)
                 .setCurrentAddress(address)
                 .setStateAndCity(state, city)
                 .clickSubmit();
@@ -48,7 +48,7 @@ public class PracticeFormWithPageObjectTests extends TestBase {
                 .verifyResult("Date of Birth", day + " " + month + "," + year)
                 .verifyResult("Subjects", subject)
                 .verifyResult("Hobbies", hobby)
-                .verifyResult("Picture", "image.img")
+                .verifyResult("Picture", image)
                 .verifyResult("Address", address)
                 .verifyResult("State and City", state + " " + city);
     }

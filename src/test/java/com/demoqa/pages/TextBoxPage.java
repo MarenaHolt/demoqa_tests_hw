@@ -1,7 +1,6 @@
 package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.demoqa.pages.component.ModalContentComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;

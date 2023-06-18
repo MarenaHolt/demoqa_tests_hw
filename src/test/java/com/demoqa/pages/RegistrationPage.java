@@ -12,10 +12,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
-
     CalendarComponent calendarComponent = new CalendarComponent();
     ModalContentComponent modalContentComponent = new ModalContentComponent();
-
     SelenideElement
             firstNameInput = $("#userName-wrapper #firstName"),
             lastNameInput = $("#userName-wrapper #lastName"),
@@ -30,8 +28,6 @@ public class RegistrationPage {
             stateCityWrapperState = $("#stateCity-wrapper #state"),
             stateCityWrapperCity = $("#stateCity-wrapper #city"),
             buttonSubmit =  $("#submit");
-
-
 
     public RegistrationPage openPage(){
         open("/automation-practice-form");
@@ -130,11 +126,4 @@ public class RegistrationPage {
 
         return this;
     }
-
-
-
-
-
-
-
 }
