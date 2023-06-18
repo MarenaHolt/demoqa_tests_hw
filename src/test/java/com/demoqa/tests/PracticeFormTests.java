@@ -11,14 +11,13 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeFormTests {
-
+public class PracticeFormTests extends TestBase {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         //Configuration.holdBrowserOpen = true;
-        Configuration.pageLoadStrategy = "eager";
+        //Configuration.pageLoadStrategy = "eager";
     }
 
     @Test
@@ -59,7 +58,7 @@ public class PracticeFormTests {
 
         $("#hobbiesWrapper").$(byText("Reading")).click();
 
-        $("#uploadPicture").uploadFromClasspath("image.img");
+        $("#uploadPicture").uploadFromClasspath("img/image.img");
 
         $("#currentAddress").setValue(address);
 
