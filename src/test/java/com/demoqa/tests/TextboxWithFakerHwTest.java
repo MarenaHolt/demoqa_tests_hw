@@ -2,17 +2,19 @@ package com.demoqa.tests;
 
 import com.demoqa.pages.RegistrationPage;
 import com.demoqa.pages.TextBoxPage;
+import com.demoqa.utils.RandomUtils;
 import org.junit.jupiter.api.Test;
 
-public class TextboxTest extends TestBase {
+public class TextboxWithFakerHwTest extends TestBase {
 
     TextBoxPage textBoxPage = new TextBoxPage();
     RegistrationPage registrationPage = new RegistrationPage();
+    RandomUtils randomUtils = new RandomUtils();
 
-    String name = "Some name";
-    String email = "some_email@someemail.com";
-    String currentAddress = "Some address";
-    String permanentAddress = "Another address";
+    String name = randomUtils.getFirstName(),
+            email = randomUtils.getEmail(),
+            currentAddress = randomUtils.getAddress(),
+            permanentAddress = randomUtils.getAddress();
 
     @Test
     void successTest() {

@@ -1,10 +1,9 @@
-package com.demoqa.tests;
+package com.demoqa.tests.old;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import com.demoqa.tests.TestBase;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -12,30 +11,17 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class PracticeFormTestWithDataTest extends TestBase {
-//    String name = "John";
-//    String lastName = "Doe";
-//    String email = "Jogn_Doe@jd.com";
-//    String phone = "1234567890";
-//    String address = "221b, Baker Street, London, NW1 6XE, UK";
-
-    String name;
-    String lastName;
-    String email;
-    String phone;
-    String address;
-
-//    @BeforeEach
-//    void prepareTestData() {
-//        name = "John";
-//        lastName = "Doe";
-//        email = "Jogn_Doe@jd.com";
-//        phone = "1234567890";
-//        address = "221b, Baker Street, London, NW1 6XE, UK";
-//    }
+public class PracticeFormTestWithFakerTests extends TestBase {
 
     @Test
     void successTest() {
+        Faker faker = new Faker();
+       // Faker faker = new Faker(new Locale("ru"));
+    String name = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            email = faker.internet().emailAddress();
+    String phone = "1234567890";
+    String address = "221b, Baker Street, London, NW1 6XE, UK";
 
 
         open("/automation-practice-form");

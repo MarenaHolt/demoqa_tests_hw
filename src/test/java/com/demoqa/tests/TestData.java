@@ -6,5 +6,4 @@ public class TestData {
 //    String email = "Jogn_Doe@jd.com";
 //    String phone = "1234567890";
 //    String address = "221b, Baker Street, London, NW1 6XE, UK";
-
 }

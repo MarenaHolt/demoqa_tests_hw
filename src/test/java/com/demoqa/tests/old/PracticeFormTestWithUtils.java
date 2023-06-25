@@ -1,15 +1,14 @@
-package com.demoqa.tests;
+package com.demoqa.tests.old;
 
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
+import com.demoqa.tests.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.demoqa.utils.RandomUtils.getRandomEmail;
-import static com.demoqa.utils.RandomUtils.getRandomString;
 
 public class PracticeFormTestWithUtils extends TestBase {
 //    String name = "John";
@@ -35,9 +34,9 @@ public class PracticeFormTestWithUtils extends TestBase {
 
     @Test
     void successTest() {
-    String name = getRandomString(10),
-            lastName = getRandomString(10),
-            email = getRandomEmail();
+//    String name = getRandomString(10),
+//            lastName = getRandomString(10),
+//            email = getRandomEmail();
     String phone = "1234567890";
     String address = "221b, Baker Street, London, NW1 6XE, UK";
 
@@ -51,10 +50,10 @@ public class PracticeFormTestWithUtils extends TestBase {
 
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
 
-        $("#userName-wrapper #firstName").setValue(name);
-        $("#userName-wrapper #lastName").setValue(lastName);
-
-        $("#userEmail").setValue(email);
+//        $("#userName-wrapper #firstName").setValue(name);
+//        $("#userName-wrapper #lastName").setValue(lastName);
+//
+//        $("#userEmail").setValue(email);
 
         $("#genterWrapper").$(byText("Male")).click();
 
@@ -85,18 +84,18 @@ public class PracticeFormTestWithUtils extends TestBase {
 
 
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));
-        $(".modal-body").shouldHave(text((name + " " + lastName))).shouldHave(text((email)))
-                .shouldHave(text((address)))
-                .shouldHave(text((phone)))
-                .shouldHave(text(("image.img")))
-                .shouldHave(text(("Maths")))
-                .shouldHave(text(("Haryana")))
-                .shouldHave(text(("Panipat")))
-                .shouldHave(text(("Reading")))
-                .shouldHave(text(("June")))
-                .shouldHave(text(("1990")))
-                .shouldHave(text(("27")))
-                .shouldHave(text(("Male")));
+//        $(".modal-body").shouldHave(text((name + " " + lastName))).shouldHave(text((email)))
+//                .shouldHave(text((address)))
+//                .shouldHave(text((phone)))
+//                .shouldHave(text(("image.img")))
+//                .shouldHave(text(("Maths")))
+//                .shouldHave(text(("Haryana")))
+//                .shouldHave(text(("Panipat")))
+//                .shouldHave(text(("Reading")))
+//                .shouldHave(text(("June")))
+//                .shouldHave(text(("1990")))
+//                .shouldHave(text(("27")))
+//                .shouldHave(text(("Male")));
     }
 
 }

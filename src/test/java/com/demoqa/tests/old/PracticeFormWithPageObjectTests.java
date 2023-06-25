@@ -1,6 +1,7 @@
-package com.demoqa.tests;
+package com.demoqa.tests.old;
 
 import com.demoqa.pages.RegistrationPage;
+import com.demoqa.tests.TestBase;
 import org.junit.jupiter.api.Test;
 
 

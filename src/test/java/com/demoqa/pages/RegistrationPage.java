@@ -82,6 +82,13 @@ public class RegistrationPage {
         return this;
     }
 
+    public RegistrationPage setSubjects(String word) {
+        subjectsInput.setValue(word.substring(1));
+        $(byText(word)).click();
+
+        return this;
+    }
+
     public RegistrationPage setHobbies(String hobby) {
         hobbiesWrapper.$(byText(hobby)).click();
 
