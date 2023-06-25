@@ -2,9 +2,6 @@ package com.demoqa.utils;
 
 import com.github.javafaker.Faker;
 
-import java.security.SecureRandom;
-import java.util.UUID;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
 //    public static String getRandomString(int len) {

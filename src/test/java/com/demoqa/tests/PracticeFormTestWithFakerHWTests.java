@@ -1,16 +1,9 @@
 package com.demoqa.tests;
 
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
 import com.demoqa.pages.RegistrationPage;
 import com.demoqa.utils.RandomUtils;
-import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 public class PracticeFormTestWithFakerHWTests extends TestBase {
 
