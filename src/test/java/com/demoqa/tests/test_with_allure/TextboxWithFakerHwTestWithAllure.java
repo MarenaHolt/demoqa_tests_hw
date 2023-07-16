@@ -8,6 +8,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static io.qameta.allure.Allure.step;
+
 public class TextboxWithFakerHwTestWithAllure extends TestBaseWithAllure {
 
     TextBoxPage textBoxPage = new TextBoxPage();
@@ -23,14 +25,18 @@ public class TextboxWithFakerHwTestWithAllure extends TestBaseWithAllure {
     @Tag("simple")
     @DisplayName("Successful text BoxPage")
     void successTest() {
-        textBoxPage.openTextBoxPage()
-                .setName(name)
-                .setEmail(email)
-                .setCurrentAddress(currentAddress)
-                .setPermanentAddress(permanentAddress);
+        step("Open form and fill form", () -> {
+            textBoxPage.openTextBoxPage()
+                    .setName(name)
+                    .setEmail(email)
+                    .setCurrentAddress(currentAddress)
+                    .setPermanentAddress(permanentAddress);
 
-        registrationPage.clickSubmit();
+            registrationPage.clickSubmit();
+        });
 
-        textBoxPage.verifyResult(name, email, currentAddress, permanentAddress);
+        step("Verify result", () -> {
+            textBoxPage.verifyResult(name, email, currentAddress, permanentAddress);
+        });
     }
 }

@@ -7,6 +7,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+import static com.codeborne.selenide.Condition.appear;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+import static io.qameta.allure.Allure.step;
+
 
 public class PracticeFormTestWithFakerHWTestsWithAllure extends TestBaseWithAllure {
 
@@ -33,32 +39,35 @@ public class PracticeFormTestWithFakerHWTestsWithAllure extends TestBaseWithAllu
     @Tag("simple")
     @DisplayName("Successful registration")
     void successTest() {
+        step("Open form and fill form", () -> {
+            registrationPage.openPage()
+                    .setFirstName(name)
+                    .setLastName(lastName)
+                    .setUserEmail(email)
+                    .setGender(gender)
+                    .setPhoneNumber(phone)
+                    .setBirthDay(day, month, year)
+                    .setSubjects(subject)
+                    .setHobbies(hobby)
+                    .setUploadPicture("img/"+ image)
+                    .setCurrentAddress(address)
+                    .setStateAndCity(state, city)
+                    .clickSubmit();
+        });
 
-        registrationPage.openPage()
-                .setFirstName(name)
-                .setLastName(lastName)
-                .setUserEmail(email)
-                .setGender(gender)
-                .setPhoneNumber(phone)
-                .setBirthDay(day, month, year)
-                .setSubjects(subject)
-                .setHobbies(hobby)
-                .setUploadPicture("img/"+ image)
-                .setCurrentAddress(address)
-                .setStateAndCity(state, city)
-                .clickSubmit();
-
-        registrationPage.verifyTitle("Thanks for submitting the form")
-                .verifyResult("Student Name", name + " " + lastName)
-                .verifyResult("Student Email", email)
-                .verifyResult("Gender", gender)
-                .verifyResult("Mobile", phone)
-                .verifyResult("Date of Birth", day + " " + month + "," + year)
-                .verifyResult("Subjects", subject)
-                .verifyResult("Hobbies", hobby)
-                .verifyResult("Picture", image)
-                .verifyResult("Address", address)
-                .verifyResult("State and City", state + " " + city);
+        step("Verify results", () -> {
+            registrationPage.verifyTitle("Thanks for submitting the form")
+                    .verifyResult("Student Name", name + " " + lastName)
+                    .verifyResult("Student Email", email)
+                    .verifyResult("Gender", gender)
+                    .verifyResult("Mobile", phone)
+                    .verifyResult("Date of Birth", day + " " + month + "," + year)
+                    .verifyResult("Subjects", subject)
+                    .verifyResult("Hobbies", hobby)
+                    .verifyResult("Picture", image)
+                    .verifyResult("Address", address)
+                    .verifyResult("State and City", state + " " + city);
+        });
     }
 
 
