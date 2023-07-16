@@ -2,7 +2,6 @@ package com.demoqa.tests.test_with_allure;
 
 import com.demoqa.pages.RegistrationPage;
 import com.demoqa.pages.TextBoxPage;
-import com.demoqa.tests.TestBase;
 import com.demoqa.utils.RandomUtils;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
