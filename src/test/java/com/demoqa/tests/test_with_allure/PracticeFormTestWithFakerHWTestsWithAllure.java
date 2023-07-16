@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 
-public class PracticeFormTestWithFakerHWTestsWithAllure extends TestBase {
+public class PracticeFormTestWithFakerHWTestsWithAllure extends TestBaseWithAllure {
 
     RegistrationPage registrationPage = new RegistrationPage();
 

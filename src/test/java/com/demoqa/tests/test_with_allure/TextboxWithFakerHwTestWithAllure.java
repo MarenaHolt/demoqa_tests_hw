@@ -8,7 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-public class TextboxWithFakerHwTestWithAllure extends TestBase {
+public class TextboxWithFakerHwTestWithAllure extends TestBaseWithAllure {
 
     TextBoxPage textBoxPage = new TextBoxPage();
     RegistrationPage registrationPage = new RegistrationPage();
