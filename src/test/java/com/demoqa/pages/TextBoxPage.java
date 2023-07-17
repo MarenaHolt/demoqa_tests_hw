@@ -1,5 +1,6 @@
 package com.demoqa.pages;
 
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.text;
@@ -22,6 +23,8 @@ public class TextBoxPage {
 
     public TextBoxPage openTextBoxPage() {
         open(url);
+        Selenide.executeJavaScript("$('#fixedban').remove()");
+        Selenide.executeJavaScript("$('footer').remove()");
         return this;
     }
 

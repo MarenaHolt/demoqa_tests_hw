@@ -31,7 +31,7 @@ public class RegistrationPage {
 
     public RegistrationPage openPage(){
         open("/automation-practice-form");
-        WebDriverRunner.getWebDriver().manage().window().maximize();
+       // WebDriverRunner.getWebDriver().manage().window().maximize();
         Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.executeJavaScript("$('footer').remove()");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
