@@ -113,11 +113,14 @@ public class RandomUtils {
 
     public String getDay(String month) {
         if (month.equals("April") || month.equals("June") || month.equals("September") || month.equals("November")) {
-            return String.valueOf(faker.number().numberBetween(1, 30));
+           // return String.valueOf(faker.number().numberBetween(1, 30));
+            return String.format("%02d", faker.number().numberBetween(1, 30));
         } else if (month.equals("February")) {
-            return String.valueOf(faker.number().numberBetween(1, 28));
+            return String.format("%02d", faker.number().numberBetween(1, 28));
+           // return String.valueOf(faker.number().numberBetween(1, 28));
         } else {
-            return String.valueOf(faker.number().numberBetween(1, 31));
+           // return String.valueOf(faker.number().numberBetween(1, 31));
+           return String.format("%02d", faker.number().numberBetween(1, 31));
         }
     }
 
